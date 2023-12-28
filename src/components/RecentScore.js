@@ -6,7 +6,7 @@ import RecentScoreList from "./RecentScoreList";
 import useFetch from "./useFetch";
 
 const Score = () => {
-  const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/Br6UkpCmhdjB8SRuRDKD/scores';
+  const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/Br6UkpCmhdjB8SRuRDKD/scores/';
 
   const { data: scores, isPending, error, setError } = useFetch(url);
 
@@ -37,7 +37,6 @@ const Score = () => {
       <Table striped bordered hover>
         <thead>
           <tr>
-            <th>Id</th>
             <th>Name</th>
             <th>Score</th>
           </tr>
