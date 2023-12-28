@@ -8,7 +8,9 @@ const Header = () => {
     <header className="header">
       <Navbar expand="lg" className="bg-body-tertiary">
         <Container>
-          <Navbar.Brand as={Link} to="/"><img src="../assets/leaderboard-logo.png" alt="logo-img" /></Navbar.Brand>
+          <Navbar.Brand as={Link} to="/">
+            <img className="logo-img" src="https://static.thenounproject.com/png/3388492-200.png" alt="logo-img" />
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">

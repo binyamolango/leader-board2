@@ -16,6 +16,14 @@ img {
   max-width: 100%;
 }
 
+.logo-img {
+  width: 20%;
+}
+
+.me-auto {
+  margin-left: 85%;
+}
+
 .content {
   padding: 2em 0;
 }
