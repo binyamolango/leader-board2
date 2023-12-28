@@ -42,14 +42,12 @@ img {
 @media screen and (min-width: 768px) {
   .home-row {
     display: flex;
-    justify-content: center;
-    gap: 4em;
-    border: 2px solid red;
+    justify-content: space-evenly;
+    gap: 2em;
   }
 
   .add-score,
   .recent-score {
-    width: 50%;
-    border: 2px solid yellow;
+    width: 40%;
   }
 }
