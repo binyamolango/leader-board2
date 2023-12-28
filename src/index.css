@@ -28,11 +28,11 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1em;
+  margin-bottom: 0.8em;
 }
 
 .add-score h2 {
-  margin-bottom: 0.85em;
+  margin-bottom: 0.75em;
 }
 
 .submit-btn {
