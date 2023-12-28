@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "./Header";
-import Home from "./Home";
-import Quote from "./Quote";
+import Header from "./components/Header";
+import Home from "./components/Home";
+import Quote from "./components/Quote";
 
 function App() {
   return (
