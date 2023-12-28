@@ -1,7 +1,8 @@
 const RecentScoreList = (props) => {
   const { scores } = props;
+
   return (
-    scores.map(score => (
+    scores.result.map(score => (
       <tr key={score.id}>
         <td>{score.id}</td>
         <td>{score.name}</td>

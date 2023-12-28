@@ -1,30 +1,14 @@
 import Button from "react-bootstrap/Button";
 import Table from 'react-bootstrap/Table';
+import Spinner from 'react-bootstrap/Spinner';
+import Alert from 'react-bootstrap/Alert';
 import RecentScoreList from "./RecentScoreList";
+import useFetch from "./useFetch";
 
 const Score = () => {
-  const scores = [
-    {
-      id: 1,
-      name: "Bini",
-      score: 50
-    },
-    {
-      id: 2,
-      name: "Micki",
-      score: 50
-    },
-    {
-      id: 3,
-      name: "Beki",
-      score: 80
-    },
-    {
-      id: 4,
-      name: "Buti",
-      score: 90
-    }
-  ];
+  const url = 'https://us-central1-js-capstoned-backend.cloudfunctions.net/api/games/Br6UkpCmhdjB8SRuRDKD/scores';
+
+  const { data: scores, isPending, error, setError } = useFetch(url);
 
   return (
     <div className="recent-score">
@@ -32,6 +16,24 @@ const Score = () => {
         <h2>Recent scores</h2>
         <Button variant="secondary">Refresh</Button>
       </div>
+      {isPending && (
+        <div className="spinner__loading">
+          <Spinner animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </Spinner>
+        </div>
+      )}
+      {error && (
+        <div className='error__message'>
+          <Alert variant="danger" onClose={() => setError(null)} dismissible>
+            <Alert.Heading>{error}</Alert.Heading>
+            <p>
+              The system is not able to reach the required server for fetching the data.
+              There could some problem with the API address.
+            </p>
+          </Alert>
+        </div>
+      )}
       <Table striped bordered hover>
         <thead>
           <tr>
@@ -41,7 +43,7 @@ const Score = () => {
           </tr>
         </thead>
         <tbody>
-          <RecentScoreList scores={scores} />
+          {scores && <RecentScoreList scores={scores} />}
         </tbody>
       </Table>
     </div>

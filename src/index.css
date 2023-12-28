@@ -47,6 +47,11 @@ img {
   text-align: right;
 }
 
+.spinner__loading,
+.error__message {
+  text-align: center;
+}
+
 @media screen and (min-width: 768px) {
   .home-row {
     display: flex;
