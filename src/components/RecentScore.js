@@ -1,7 +1,31 @@
 import Button from "react-bootstrap/Button";
 import Table from 'react-bootstrap/Table';
+import RecentScoreList from "./RecentScoreList";
 
 const Score = () => {
+  const scores = [
+    {
+      id: 1,
+      name: "Bini",
+      score: 50
+    },
+    {
+      id: 2,
+      name: "Micki",
+      score: 50
+    },
+    {
+      id: 3,
+      name: "Beki",
+      score: 80
+    },
+    {
+      id: 4,
+      name: "Buti",
+      score: 90
+    }
+  ];
+
   return (
     <div className="recent-score">
       <div className="refresh">
@@ -11,17 +35,13 @@ const Score = () => {
       <Table striped bordered hover>
         <thead>
           <tr>
-            <th>#</th>
+            <th>Id</th>
             <th>Name</th>
             <th>Score</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>50</td>
-          </tr>
+          <RecentScoreList scores={scores} />
         </tbody>
       </Table>
     </div>
