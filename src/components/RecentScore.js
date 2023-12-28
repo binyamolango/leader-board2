@@ -6,7 +6,7 @@ import RecentScoreList from "./RecentScoreList";
 import useFetch from "./useFetch";
 
 const Score = () => {
-  const url = 'https://us-central1-js-capstoned-backend.cloudfunctions.net/api/games/Br6UkpCmhdjB8SRuRDKD/scores';
+  const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/Br6UkpCmhdjB8SRuRDKD/scores';
 
   const { data: scores, isPending, error, setError } = useFetch(url);
 
