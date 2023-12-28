@@ -8,13 +8,17 @@ import useFetch from "./useFetch";
 const Score = () => {
   const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/Br6UkpCmhdjB8SRuRDKD/scores/';
 
-  const { data: scores, isPending, error, setError } = useFetch(url);
+  const { data: scores, isPending, error, setError, fetchData } = useFetch(url);
+
+  const handleRefresh = () => {
+    fetchData(url);
+  }
 
   return (
     <div className="recent-score">
       <div className="refresh">
         <h2>Recent scores</h2>
-        <Button variant="secondary">Refresh</Button>
+        <Button onClick={handleRefresh} variant="secondary">Refresh</Button>
       </div>
       {isPending && (
         <div className="spinner__loading">

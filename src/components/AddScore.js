@@ -7,11 +7,14 @@ const AddScore = () => {
 
   const [user, setUser] = useState('');
   const [score, setScore] = useState('');
+  const [isPending, setIsPending] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const scoreAdded = { user, score };
+
+    setIsPending(true);
 
     fetch(url, {
       method: "POST",
@@ -20,7 +23,8 @@ const AddScore = () => {
     }).then(() => {
       setUser('');
       setScore('');
-    })
+      setIsPending(false);
+    });
   }
 
   return (
@@ -30,7 +34,7 @@ const AddScore = () => {
         <Form.Group className="mb-3" controlId="formGroupEmail">
           <Form.Control
             type="text"
-            placeholder="Your user"
+            placeholder="Your name"
             required
             value={user}
             onChange={(e) => setUser(e.target.value)}
@@ -46,9 +50,8 @@ const AddScore = () => {
           />
         </Form.Group>
         <div className="submit-btn">
-          <Button variant="secondary" type="submit">
-            Submit
-          </Button>
+          {!isPending && <Button variant="secondary" type="submit">Submit</Button>}
+          {isPending && <Button variant="secondary" type="submit" disabled>Submitting score...</Button>}
         </div>
       </Form>
     </div>
