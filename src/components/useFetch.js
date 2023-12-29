@@ -29,7 +29,7 @@ const useFetch = (url) => {
     fetchData(url);
   }, [url]);
 
-  return { data, isPending, error, setError, fetchData };
+  return { data, isPending, error, setError, setIsPending, fetchData };
 }
  
 export default useFetch;
