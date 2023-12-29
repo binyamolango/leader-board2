@@ -1,6 +1,6 @@
 import Container from "react-bootstrap/Container";
-import Score from "./RecentScore";
 import AddScore from "./AddScore";
+import RecentScore from "./RecentScore";
 
 const Home = () => {
   return (
@@ -8,7 +8,7 @@ const Home = () => {
       <Container>
         <h1>Leader Board</h1>
         <div className="home-row">
-          <Score />
+          <RecentScore />
           <AddScore />
         </div>
       </Container>

@@ -5,7 +5,7 @@ import Alert from 'react-bootstrap/Alert';
 import RecentScoreList from "./RecentScoreList";
 import useFetch from "./useFetch";
 
-const Score = () => {
+const RecentScore = () => {
   const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/Br6UkpCmhdjB8SRuRDKD/scores/';
 
   const { data: scores, isPending, error, setError, fetchData } = useFetch(url);
@@ -53,4 +53,4 @@ const Score = () => {
   );
 }
  
-export default Score;
+export default RecentScore;
